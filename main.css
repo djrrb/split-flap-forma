@@ -1,0 +1,15 @@
+html, body {background:#fff; color:#333; font-family: "FormaDJRVariable"}
+.container {max-width: 800px; margin: 0 auto;}
+
+.splitflap {
+  position: relative;
+  min-width: 100px;
+  height: 100px;
+  margin: 10px;
+  line-height: 100px;
+  font-size: 100px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  float: left;
+}
