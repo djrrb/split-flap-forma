@@ -3,7 +3,7 @@
        url('fonts/FormaDJRMono-VF.woff') format("woff");
   font-family: 'FormaDJRMono';
   font-style: normal;
-  font-weight: normal;
+  font-weight: 100 900;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
        url('fonts/FormaDJRVariable-Italic-VF-Testing.woff') format("woff");
   font-family: 'FormaDJRVariable';
   font-style: italic;
-  font-weight: normal;
+  font-weight: 100 900;
 }
 
 @font-face {
