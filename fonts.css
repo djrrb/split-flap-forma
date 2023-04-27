@@ -1,7 +1,7 @@
 @font-face {
-  src: url('fonts/FormaDJRVariable-VF-Testing.woff2') format("woff2"),
-       url('fonts/FormaDJRVariable-VF-Testing.woff') format("woff");
-  font-family: 'FormaDJRVariable';
+  src: url('fonts/FormaDJRMono-VF.woff2') format("woff2"),
+       url('fonts/FormaDJRMono-VF.woff') format("woff");
+  font-family: 'FormaDJRMono';
   font-style: normal;
   font-weight: normal;
 }
