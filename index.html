@@ -19,14 +19,35 @@
 </header>
 <div class="flapper">
     <input class="header dark XXL" id="display" />
+    <input class="header dark XXL" id="display2" />
 </div>
 <script type="text/javascript">
-  var options = {
-    width: 8,
+  
+  var width = document.body.clientWidth;
+  var numberOfChars = Math.floor(width / 100);
+  /** This will adjust on resize someday...
+  //var onresize = function(width) {
+   //your code here
+   //this is just an example
+  // width = document.body.clientWidth;
+   //height = document.body.clientHeight;
+   //console.log(width);
+   //console.log(numberOfChars);
+}
+window.addEventListener("resize", onresize);
+**/
+console.log(width);
+console.log(numberOfChars);
+
+var options = {
+    width: numberOfChars,
     align: 'left',
     chars_preset: 'alphanum',
+    min_timing: 200,
   }
- $('#display').flapper(options).val('FORMA').change(); 
+
+ $('#display').flapper(options).val('FORMA MONO').change(); 
+ $('#display2').flapper(options).val('BY DJR').change();
 </script>
 </body>
 </html>
