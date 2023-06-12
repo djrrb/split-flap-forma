@@ -1,5 +1,5 @@
-html, body {background:#fff; color:#333; font-family: "FormaDJRMono"}
-.container {max-width: 800px; margin: 0 auto;}
+html, body {background:#fff; color:#333; font-family: "FormaDJRMono"; }
+.container {max-width: 800px; margin: 0 auto; }
 
 .splitflap {
   display: block;
@@ -23,4 +23,10 @@ html, body {background:#fff; color:#333; font-family: "FormaDJRMono"}
   line-height: 1.2 !important;
 }
 
-/** Transition from time to font name for prototype **/
+/** IDEA: Transition from time to font name for prototype? **/
+
+.waterfall .example-text{
+  font-size: 10rem;
+  font-weight: 100;
+  /**font-synthesis: none;**/
+}

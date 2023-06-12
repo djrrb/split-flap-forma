@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Split Flap Prototype</title>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="css/flapper.css" type="text/css" rel="stylesheet" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="js/dist/jquery.transform-0.9.3.min.js"></script>
+        <script src="jshashtable-2.1/jshashtable.js"></script>
+        <script src="numberformatter/jquery.numberformatter-1.2.3.min.js"></script>
+        <script src="js/jquery.flapper.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Split Flap Prototype</h1>
+</header>
+
+<div class="waterfall">
+
+  <div class="controls">
+    <form>
+    <select id="style">
+      <option data-weight="100" data-style="normal">Forma DJR Mono Light</option>
+      <option data-weight="100" data-style="italic">Forma DJR Mono Light Italic</option>
+      <option data-weight="400" data-style="normal">Forma DJR Mono Regular</option>
+      <option data-weight="400" data-style="italic">Forma DJR Mono Regular Italic</option>
+      <option data-weight="700" data-style="normal">Forma DJR Mono Bold</option>
+      <option data-weight="700" data-style="italic">Forma DJR Mono Bold Italic</option>
+    </select>
+    weight 
+    <!-- this will be a slider -->
+    <input type="range" value="0" min="100" max="700" id="weightRange" />
+    <select>
+      <option value="100">Light</option>
+      <option value="400">Regular</option>
+      <option value="700">Bold</option>
+    </select>
+    <button>italic</button>
+    <!--secret checkbox goodness/ -->
+    <input type="range" value="0" min="0" max="1" id="italicRange" />
+    <!--select id="italicness">
+      <option data-italicness="0">0</option>
+      <option data-italicness="0.5">50</option>
+      <option data-italicness="1">100</option>
+    </select>-->
+    features
+    <select id="features">
+      <option>feature 1</option>
+      <option>feature 2</option>
+      <option>feature 3</option>
+    </select>
+    <button>uppercase</button>
+    <!--secret checkbox goodness maybe on state becomes uppercase/italic with another visual change?/ -->
+  </form>
+    <span style="display:none">italic features uppercase</span>
+  </div>
+  <div class="example-text">
+    Waterfall
+  </div> 
+</div>
+<script>
+  $('#style').on('change', function() {
+    var weight = $(this).find(':selected').data('weight'); 
+    var style = $(this).find(':selected').data('style'); 
+    $('.example-text').css("font-weight",weight).css("font-style",style);
+  });
+  $('#italicness').on('change', function() {
+    var italicness = $(this).find(':selected').data('italicness'); 
+    //console.log( italicness );
+    $('.example-text').css('font-variation-settings', "'ital'" + italicness);
+  });
+  $('#italicRange').on('change', function() {
+    var italicValue = $("#italicRange").val();
+    console.log( italicValue );
+    
+  });
+  $('#weightRange').on('change', function() {
+    var weightValue = $("#weightRange").val();
+    console.log( weightValue );
+    
+  });
+</script>  
+</body>
+</html>
