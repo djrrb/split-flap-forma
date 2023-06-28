@@ -1,7 +1,7 @@
-html, body {background:#fff; color:#333; font-family: "FormaDJRMono"; }
+html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-sizing:border-box; }
 .container {max-width: 800px; margin: 0 auto; }
 
-.splitflap {
+/**.splitflap {
   display: block;
   position: relative;
   min-width: 95px;
@@ -12,21 +12,91 @@ html, body {background:#fff; color:#333; font-family: "FormaDJRMono"; }
   color: white;
   background-color: black;
   float: left;
+}**/
+.flapper-container {
+  height: 21rem; /** TODO: Make this more flexible**/
+  position: relative;
 }
+
 .flapper {
   display: block;
   clear: both;
   font-family: "FormaDJRMono" !important;
+  text-align: center;
+  
 }
 
 .flapper.XXL .digit {
   line-height: 1.2 !important;
 }
 
-/** IDEA: Transition from time to font name for prototype? **/
+.cta-link {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-link:hover {
+  text-decoration: underline;
+} 
+
+.right {
+  float: right;
+}
+
+.bottom-cta {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.content-emphasis {
+  width: 62%;
+  font-size: 4rem;
+}
+
+.content-text {
+  width: 100%;
+  padding-bottom: .75rem;
+}
+.text-block {
+  width: 50%;
+  font-size: 1rem;
+}
+
+.content-image {
+  align-self: center;
+  font-size: .75rem;
+  margin: .75rem 0;
+}
 
 .waterfall .example-text{
   font-size: 10rem;
   font-weight: 100;
+  border: 2px solid pink;
   /**font-synthesis: none;**/
+}
+
+.placeholder {
+  border: 1px solid white; /** TODO make sure to delete this when content is in **/
+}
+
+/**Media queries: Mobile-last since this will be mainly viewed on desktop **/
+@media screen and (max-width: 900px) {
+  .content-emphasis, .text-block {
+    width: 100%;
+  }
+  .content-image img {
+    width: 100%;
+  }
+  .content-emphasis {
+  font-size: 3rem;
+}
 }
