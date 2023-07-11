@@ -52,7 +52,8 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
 
 .content-emphasis {
   width: 62%;
-  font-size: 4rem;
+  font-size: 3.5rem;
+  font-weight: normal;
 }
 
 .content-text {
