@@ -71,11 +71,22 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
   margin: .75rem 0;
 }
 
-.waterfall .example-text{
+.waterfall .example-text {
   font-size: 10rem;
   font-weight: 100;
-  border: 2px solid pink;
   /**font-synthesis: none;**/
+}
+
+.waterfall .example-text.uppercase {
+  text-transform: uppercase;
+}
+
+.waterfall .example-text.italic {
+  font-style: italic;
+}
+
+.waterfall-label {
+  font-size: 1rem;
 }
 
 .placeholder {
@@ -94,6 +105,19 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
 
 .glyph:hover {
   font-weight: bold;
+}
+
+.textButton { 
+  border: none;
+  color: #fff;
+  background: none;
+  font-family: "FormaDJRMono";
+  font-size: 1rem;
+}
+
+.textButton.on {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /**Media queries: Mobile-last since this will be mainly viewed on desktop **/

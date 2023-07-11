@@ -38,7 +38,7 @@
       <option value="400">Regular</option>
       <option value="700">Bold</option>
     </select>
-    <button>italic</button>
+    <button id="italicToggle" class="textButton">italic</button>
     <!--secret checkbox goodness/ -->
     <input type="range" value="0" min="0" max="1" id="italicRange" />
     <!--select id="italicness">
@@ -52,10 +52,9 @@
       <option>feature 2</option>
       <option>feature 3</option>
     </select>
-    <button>uppercase</button>
+    <button id="uppercaseToggle" class="textButton">uppercase</button>
     <!--secret checkbox goodness maybe on state becomes uppercase/italic with another visual change?/ -->
   </form>
-    <span style="display:none">italic features uppercase</span>
   </div>
   <div class="example-text">
     Waterfall
@@ -73,15 +72,30 @@
     $('.example-text').css('font-variation-settings', "'ital'" + italicness);
   });
   $('#italicRange').on('change', function() {
-    var italicValue = $("#italicRange").val();
-    console.log( italicValue );
+    var italicness = $("#italicRange").val();
+    console.log( italicness );
+    $('.example-text').css('font-variation-settings', "'ital'" + italicness);
     
   });
   $('#weightRange').on('change', function() {
     var weightValue = $("#weightRange").val();
     console.log( weightValue );
-    
+    $('.example-text').css("font-weight",weightValue);
   });
+
+  $('#italicToggle').click(function() {
+    event.preventDefault()
+    $('.example-text').toggleClass('italic');
+    $('#italicToggle.textButton').toggleClass('on');
+    console.log("italic");
+  });
+  $('#uppercaseToggle').click(function() {
+    event.preventDefault()
+    $('.example-text').toggleClass('uppercase');
+    $('#uppercaseToggle.textButton').toggleClass('on');
+    console.log("Uppercase");
+
+});
 </script>  
 </body>
 </html>

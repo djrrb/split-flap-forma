@@ -60,8 +60,44 @@
     <section class="content-container placeholder">
         Time Table will go here
       </section>
-    <section class="content-container placeholder">
-        Waterfall will go here
+    <section class="content-container">
+      <div class="waterfall">
+
+        <div class="controls">
+          <form>
+          <select id="style">
+            <option data-weight="100" data-style="normal">Forma DJR Mono Light</option>
+            <option data-weight="100" data-style="italic">Forma DJR Mono Light Italic</option>
+            <option data-weight="400" data-style="normal">Forma DJR Mono Regular</option>
+            <option data-weight="400" data-style="italic">Forma DJR Mono Regular Italic</option>
+            <option data-weight="700" data-style="normal">Forma DJR Mono Bold</option>
+            <option data-weight="700" data-style="italic">Forma DJR Mono Bold Italic</option>
+          </select>
+          <label for="weightRange" class="waterfall-label">weight</label> 
+          <!-- this will be a slider -->
+          <input type="range" value="0" min="100" max="700" id="weightRange" />
+          <!--button id="italicToggle" class="textButton">italic</button-->
+          <label for="italicRange" class="waterfall-label">italic </label> 
+          <input type="range" value="0" min="0" max="100" id="italicRange" />
+          <!--select id="italicness">
+            <option data-italicness="0">0</option>
+            <option data-italicness="0.5">50</option>
+            <option data-italicness="1">100</option>
+          </select>-->
+          features
+          <select id="features">
+            <option>feature 1</option>
+            <option>feature 2</option>
+            <option>feature 3</option>
+          </select>
+          <button id="uppercaseToggle" class="textButton">uppercase</button>
+          <!--secret checkbox goodness maybe on state becomes uppercase/italic with another visual change?/ -->
+        </form>
+        </div>
+        <div class="example-text">
+          Waterfall
+        </div> 
+      </div>
     </section>
     <section class="content-container">
         <h2 class="heading">Glyphset</h2>
@@ -97,6 +133,41 @@
 
      $('#display').flapper(options).val('FORMA DJR').change(); 
      $('#display2').flapper(options).val('MONO').change();
+
+     $('#style').on('change', function() {
+    var weight = $(this).find(':selected').data('weight'); 
+    var style = $(this).find(':selected').data('style'); 
+    $('.example-text').css("font-weight",weight).css("font-style",style);
+  });
+  $('#italicness').on('change', function() {
+    var italicness = $(this).find(':selected').data('italicness'); 
+    //console.log( italicness );
+    $('.example-text').css('font-variation-settings', "'ital'" + italicness);
+  });
+  $('#italicRange').on('change', function() {
+    var italicness = $("#italicRange").val()/100;
+    console.log( italicness );
+    $('.example-text').css('font-variation-settings', "'ital'" + italicness);
+    
+  });
+  $('#weightRange').on('change', function() {
+    var weightValue = $("#weightRange").val();
+    console.log( weightValue );
+    $('.example-text').css("font-weight",weightValue);
+  });
+
+  $('#italicToggle').click(function() {
+    event.preventDefault()
+    $('.example-text').toggleClass('italic');
+    $('#italicToggle.textButton').toggleClass('on');
+    console.log("italic");
+  });
+  $('#uppercaseToggle').click(function() {
+    event.preventDefault()
+    $('.example-text').toggleClass('uppercase');
+    $('#uppercaseToggle.textButton').toggleClass('on');
+    console.log("Uppercase");
+  });
     </script>
   </body>
 </html>
