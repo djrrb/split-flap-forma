@@ -1,18 +1,6 @@
 html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-sizing:border-box; }
 .container {max-width: 800px; margin: 0 auto; }
 
-/**.splitflap {
-  display: block;
-  position: relative;
-  min-width: 95px;
-  height: 110px;
-  margin: 10px;
-  font-size: 100px;
-  text-align: center;
-  color: white;
-  background-color: black;
-  float: left;
-}**/
 .flapper-container {
   height: 21rem; /** TODO: Make this more flexible**/
   position: relative;
@@ -28,6 +16,11 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
 
 .flapper.XXL .digit {
   line-height: 1.2 !important;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .cta-link {
@@ -89,6 +82,20 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
   border: 1px solid white; /** TODO make sure to delete this when content is in **/
 }
 
+.glyphset-container {
+  display: grid;
+  grid-template-columns: repeat(12, 8.3%);
+  grid-gap: 15px 0;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glyph:hover {
+  font-weight: bold;
+}
+
 /**Media queries: Mobile-last since this will be mainly viewed on desktop **/
 @media screen and (max-width: 900px) {
   .content-emphasis, .text-block {
@@ -99,5 +106,8 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
   }
   .content-emphasis {
   font-size: 3rem;
-}
+  }
+  .glyphset-container {
+    grid-template-columns: repeat(8, 12.5%);
+  }
 }
