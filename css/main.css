@@ -72,7 +72,8 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
 }
 
 .content-image {
-  align-self: center;
+  width: 100%;
+  max-width: 1500px;
   font-size: .75rem;
   margin: .75rem 0;
 }
