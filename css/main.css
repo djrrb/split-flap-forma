@@ -1,8 +1,28 @@
-html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-sizing:border-box; }
-.container {max-width: 800px; margin: 0 auto; }
+@font-face {
+  src: url('/fonts/FormaDJRMono-VF.woff2') format("woff2"),
+    url('/fonts/FormaDJRMono-VF.woff') format("woff");
+  font-family: 'FormaDJRMono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+html,
+body {
+  background: #e7373e;
+  color: #fff;
+  font-family: "FormaDJRMono";
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 .flapper-container {
-  height: 21rem; /** TODO: Make this more flexible**/
+  height: 21rem;
+  /** TODO: Make this more flexible**/
   position: relative;
 }
 
@@ -11,7 +31,7 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
   clear: both;
   font-family: "FormaDJRMono" !important;
   text-align: center;
-  
+
 }
 
 .flapper.XXL .digit {
@@ -32,7 +52,7 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
 
 .cta-link:hover {
   text-decoration: underline;
-} 
+}
 
 .right {
   float: right;
@@ -62,9 +82,11 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
   width: 100%;
   padding-bottom: .75rem;
 }
+
 .text-block {
   width: 50%;
-  font-size: 1.2rem; line-height: 140%
+  font-size: 1.2rem;
+  line-height: 140%
 }
 
 .content-image {
@@ -93,24 +115,35 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
 }
 
 .placeholder {
-  border: 1px solid white; /** TODO make sure to delete this when content is in **/
+  border: 1px solid white;
+  /** TODO make sure to delete this when content is in **/
 }
 
 .glyphset-container {
   display: grid;
-  grid-template-columns: repeat(12, 8.3%);
-  grid-gap: 15px 0;
+  grid-template-columns: repeat(12, auto);
+  justify-items: center;
+  justify-content: stretch;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3vw;
   width: 100%;
   overflow: hidden;
+
 }
 
+.glyph {
+  font-variation-settings: 'wght' var(--font-weight);
+  width: 100%;
+  cursor: move;
+  padding: .5rem;
+}
+
+/* 
 .glyph:hover {
   font-weight: bold;
-}
+} */
 
-.textButton { 
+.textButton {
   border: none;
   color: #fff;
   background: none;
@@ -127,16 +160,16 @@ html, body {background:#e7373e; color:#fff; font-family: "FormaDJRMono"; box-siz
 /*Range Reset*/
 input[type="range"] {
   -webkit-appearance: none;
-   appearance: none;
-   background: transparent;
-   cursor: pointer;
-   width: 15rem;
-   vertical-align: middle;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+  vertical-align: middle;
 }
 
 /* Removes default focus */
 input[type="range"]:focus {
- outline: none;
+  outline: none;
 }
 
 /***** Chrome, Safari, Opera and Edge Chromium styles *****/
@@ -144,15 +177,17 @@ input[type="range"]:focus {
 input[type="range"]::-webkit-slider-runnable-track {
   background-color: #fff;
   border-radius: 0.5rem;
-  height: 0.125rem;  
-  
+  height: 0.125rem;
+
 }
 
 /* slider thumb */
 input[type="range"]::-webkit-slider-thumb {
- -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;
+  /* Override default look */
   appearance: none;
-  margin-top: -6px; /* Centers thumb on the track */
+  margin-top: -6px;
+  /* Centers thumb on the track */
   border-radius: 0.5rem;
 
 
@@ -162,7 +197,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: .75rem;
 }
 
-input[type="range"]:focus::-webkit-slider-thumb {   
+input[type="range"]:focus::-webkit-slider-thumb {
   box-shadow: inset 1px 0px 2px #3e3d3d;
 }
 
@@ -176,7 +211,8 @@ input[type="range"]::-moz-range-track {
 
 /* slider thumb */
 input[type="range"]::-moz-range-thumb {
-  border: none; /*Removes extra border that FF applies*/
+  border: none;
+  /*Removes extra border that FF applies*/
   /*border-radius: 0; Removes default border-radius that FF applies*/
 
   /*custom styles*/
@@ -191,15 +227,20 @@ input[type="range"]:focus::-moz-range-thumb {
 
 /**Media queries: Mobile-last since this will be mainly viewed on desktop **/
 @media screen and (max-width: 900px) {
-  .content-emphasis, .text-block {
+
+  .content-emphasis,
+  .text-block {
     width: 100%;
   }
+
   .content-image img {
     width: 100%;
   }
+
   .content-emphasis {
-  font-size: 3rem;
+    font-size: 3rem;
   }
+
   .glyphset-container {
     grid-template-columns: repeat(8, 12.5%);
   }
