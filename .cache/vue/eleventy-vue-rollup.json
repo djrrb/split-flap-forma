@@ -1,0 +1,25 @@
+{
+  "vueToJs": {
+    "./_includes/specimen.vue": "_includes/specimen.js",
+    "./index.vue": "index.js",
+    "./_includes/flapper.vue": "_includes/flapper.js"
+  },
+  "relationships": [
+    {
+      "from": "_includes/specimen.js",
+      "to": "_includes/specimen.vue_rollup-plugin-vue_script.js"
+    },
+    {
+      "from": "index.js",
+      "to": "index.vue_rollup-plugin-vue_script.js"
+    },
+    {
+      "from": "_includes/flapper.js",
+      "to": "_includes/flapper.vue_rollup-plugin-vue_script.js"
+    },
+    {
+      "from": "index.vue_rollup-plugin-vue_script.js",
+      "to": "_includes/specimen.js"
+    }
+  ]
+}

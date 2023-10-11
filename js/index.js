@@ -73,8 +73,5 @@ glyphsContainer.addEventListener('mouseleave', (e) => {
   gsap.to(glyphs, {
     '--font-weight': 300,
     duration: 0.75,
-    onStart: function () {
-      console.log(this);
-    },
   });
 });

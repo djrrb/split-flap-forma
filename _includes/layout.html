@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Forma DJR Mono</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="css/flapper.css" type="text/css" rel="stylesheet"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/dist/jquery.transform-0.9.3.min.js"></script>
+    <script src="js/jquery.flapper.js"></script>
+  </head>
+  <body>
+    {{ content }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/specimen.js"></script>
+    <script type="text/javascript">
+
+      var width = document.body.clientWidth;
+      var numberOfChars = Math.floor(width / 105);
+
+      var options = {
+        width: numberOfChars,
+        align: 'left',
+        chars_preset: 'alphanum',
+        min_timing: 200
+      }
+    </script>
+  </body>
+</html>

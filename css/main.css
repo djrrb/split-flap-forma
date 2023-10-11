@@ -143,6 +143,69 @@ body {
   font-weight: bold;
 } */
 
+.specimen {
+  accent-color: #000;
+  margin-bottom: 5rem;
+}
+
+.specimen__controls {
+  margin-bottom: 2rem;
+}
+
+.specimen fieldset {
+  border: 0;
+}
+
+.specimen label {
+  cursor: pointer;
+}
+
+.specimen sup {
+  opacity: .7;
+  font-size: .75rem;
+}
+
+.specimen__field {
+  display: inline-grid;
+  gap: .5rem;
+  padding: 0;
+}
+
+.specimen__label-text {
+  font-size: .75rem;
+}
+
+.specimen__checkbox-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.specimen__input--select {
+  background: transparent;
+  font: inherit;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 0.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.specimen__text {
+  font-size: var(--size, 17vw);
+  font-variation-settings: 'wght' var(--weight, 400), 'ital' var(--italic, 0);
+  font-feature-settings: var(--features);
+  white-space: nowrap;
+  width: 100%;
+  overflow: scroll;
+}
+
+.specimen__text:focus {
+  outline: none;
+  border-bottom: 5px dashed #000;
+  line-height: 1;
+}
+
+
 .textButton {
   border: none;
   color: #fff;
