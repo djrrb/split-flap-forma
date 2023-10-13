@@ -1,19 +1,37 @@
 @font-face {
   src: url('/fonts/FormaDJRMono-VF.woff2') format("woff2"),
     url('/fonts/FormaDJRMono-VF.woff') format("woff");
-  font-family: 'FormaDJRMono';
+  font-family: 'Forma DJR Mono';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
 }
 
-html,
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   background: #e7373e;
   color: #fff;
-  font-family: "FormaDJRMono";
-  box-sizing: border-box;
+  margin: 0;
+  font-family: "Forma DJR Mono";
 }
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
 
 .container {
   max-width: 800px;
@@ -67,7 +85,8 @@ body {
 .content-container {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
+  padding-inline: 1rem;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -152,8 +171,28 @@ body {
   margin-bottom: 2rem;
 }
 
+@media screen and (min-width: 60rem) {
+  .specimen__controls {
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr auto;
+    align-content: center;
+    gap: 1rem;
+  }
+}
+
 .specimen fieldset {
   border: 0;
+}
+
+@media screen and (min-width: 60rem) {
+  .specimen fieldset[data-features] {
+    grid-column-end: span 4;
+  }
+
+  .specimen input[type="range"] {
+    width: 100%;
+  }
 }
 
 .specimen label {
@@ -190,6 +229,28 @@ body {
   cursor: pointer;
 }
 
+.specimen__row {
+  display: flex;
+  gap: 1rem;
+}
+
+.specimen__icon-button {
+  width: 2.5rem;
+  aspect-ratio: 1;
+  padding: .25rem;
+  display: grid;
+  place-items: center;
+
+
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.specimen__icon-button:has(:checked) {
+  border-color: currentColor;
+}
+
 .specimen__text {
   font-size: var(--size, 17vw);
   font-variation-settings: 'wght' var(--weight, 400), 'ital' var(--italic, 0);
@@ -204,7 +265,6 @@ body {
   border-bottom: 5px dashed #000;
   line-height: 1;
 }
-
 
 .textButton {
   border: none;
